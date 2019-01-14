@@ -13,12 +13,18 @@
     ],
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "rules": {
-        "comma-dangle": 0
+        "comma-dangle": 0,
+        "react/display-name": 0,
+        "no-console": "off"
     },
     "settings": {
         "react": {
             "pragma": "React",
             "version": "15.4.2"
         }
+    },
+    "env": {
+        "browser": true,
+        "jest": true
     }
 }
