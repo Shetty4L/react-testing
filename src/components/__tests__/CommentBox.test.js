@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import CommentBox from '../CommentBox';
+import CommentBox from 'components/CommentBox';
 
 describe('existence of HTML elements', () => {
   let wrapped;
