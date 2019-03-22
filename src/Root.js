@@ -4,16 +4,17 @@ import { createStore } from 'redux';
 import reducers from 'reducers';
 import PropTypes from 'prop-types';
 
-const  Root = (props)  => {
+const  Root = ({ children, initialState = {} })  => {
   return (
-    <Provider store={createStore(reducers, {})}>
-      {props.children}
+    <Provider store={createStore(reducers, initialState)}>
+      {children}
     </Provider>
   );
 }
 
 Root.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
+  initialState: PropTypes.object
 }
 
 export default Root;
