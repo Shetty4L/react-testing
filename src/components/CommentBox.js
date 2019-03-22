@@ -9,6 +9,7 @@ class CommentBox extends Component {
     this.state = { comment: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
   }
 
   handleChange(event) {
@@ -21,6 +22,10 @@ class CommentBox extends Component {
     this.setState({ comment: '' });
   }
 
+  handleFetch() {
+    this.props.fetchComments();
+  }
+
   render() {
     return (
       <form onSubmit={event => event.preventDefault()} >
@@ -28,7 +33,7 @@ class CommentBox extends Component {
         <textarea onChange={this.handleChange} value={this.state.comment}/>
         <div>
           <button id='submit' onClick={this.handleSubmit}>Submit Comment</button>
-          <button id='fetch'>Fetch Comments</button>
+          <button id='fetch' onClick={this.handleFetch}>Fetch Comments</button>
         </div>
       </form>
     );
@@ -36,7 +41,8 @@ class CommentBox extends Component {
 }
 
 CommentBox.propTypes = {
-  saveComment: PropTypes.func
+  saveComment: PropTypes.func,
+  fetchComments: PropTypes.func
 }
 
 export default connect(null, actions)(CommentBox);
