@@ -12,7 +12,7 @@ beforeEach(() => {
   );
 });
 
-afterEach(() => {  
+afterEach(() => {
   wrapped.unmount();
 });
 
@@ -22,7 +22,11 @@ describe('existence of HTML elements', () => {
   });
 
   it('has a submit button', () => {
-    expect(wrapped.find('button')).toHaveLength(1);
+    expect(wrapped.find('button').first().render().text().toLowerCase()).toContain('submit');
+  });
+
+  it('has a fetch comments button', () => {
+    expect(wrapped.find('button').last().render().text().toLowerCase()).toContain('fetch');
   });
 });
 
