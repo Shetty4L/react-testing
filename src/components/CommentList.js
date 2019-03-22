@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class CommentList extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   renderComments() {
     const comments = this.props.comments;
     return (
