@@ -43,7 +43,7 @@ describe('text area', () => {
   it('clears text area after form is submitted', () => {
     expect(wrapped.find('textarea').prop('value')).toEqual('test-input-string');
 
-    wrapped.find('form').simulate('submit');
+    wrapped.find('button#submit').simulate('click');
     wrapped.update();
 
     expect(wrapped.find('textarea').prop('value')).toEqual('');
